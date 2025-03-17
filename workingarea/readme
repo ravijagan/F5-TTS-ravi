@@ -1,0 +1,10 @@
+example.sh has the default way of running F5. you need a voice sample and a text file what the voice is saying. it must be 15 secs . The long book to be transcribed must be of short sentences. Only 50 words. There is a cap on both the sample+the sentence to be less than 30 seconds. 
+
+Activate virtual env 
+see F5 github how to pip install all the packages. 
+then run example.sh
+So what did we change in F5 ? nothing major. the infer_cli.py can be modified to make life easier for us instead of using `cat the_stuff_that_should_have_been_in_file` . Then there are issues in preparing the machine wher GPU is not used. we can add debug statements in it. 
+==================
+3/16 542pm pst . cant get virtual env to pick up the GPU forgot what we did last time 
+maybe used powershell ? maybe not 
+seems to work now. Bleeds a little if the reference . have to fix it 
