@@ -1,10 +1,30 @@
-example.sh has the default way of running F5. you need a voice sample and a text file what the voice is saying. it must be 15 secs . The long book to be transcribed must be of short sentences. Only 50 words. There is a cap on both the sample+the sentence to be less than 30 seconds. 
+The prompt example.sh has the default way of running F5. you need a voice sample and a text file what the voice is saying. it must be 15 secs preferably 12 seconds. 
+The long text to be transcribed must be of short sentences. sentences of Only 20 words. There is a cap on both the sample+the sentence to be less than 30 seconds. 
 
+installation 
 Activate virtual env 
 see F5 github how to pip install all the packages. 
 then run example.sh
+
+
 So what did we change in F5 ? nothing major. the infer_cli.py can be modified to make life easier for us instead of using `cat the_stuff_that_should_have_been_in_file` . Then there are issues in preparing the machine wher GPU is not used. we can add debug statements in it. 
-==================
-3/16 542pm pst . cant get virtual env to pick up the GPU forgot what we did last time 
-maybe used powershell ? maybe not 
-seems to work now. Bleeds a little if the reference . have to fix it 
+
+cant get virtual env to pick up the GPU ? this is the fix 
+
+
+Start from scratch
+create a venv
+start bash <=====================================default cygwind does something
+source ./f5venev_r/Scripts/activate <=================default sygwin does something else . Do not do bin/activate
+
+The prompt must change to the environment name f5venv_r after activation
+
+pip install -e . <========================================takes a long time to build f5-tts and its packages 10 mins 
+
+Still no cuda? 
+Go to cuda stite use the UI tool and change the settingsd so that  generates a pip command like this 
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+uninstall the above and reinstall 2.5GB takes a bit of time 
+
+known issues 
+works fine now with some bleed of training sentence . 
